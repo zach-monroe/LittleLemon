@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from LittleLemon.router import router
+import djoser.urls
+import djoser.urls.authtoken
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('restaurant/', include('LittleLemon.urls')),
-    path('auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('api/', include(router.urls)),
+    path('api/', include('rest_framework.urls', namespace='rest_framework')),
+    #path('api/', include(router.urls)),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.authtoken'))
 ]
