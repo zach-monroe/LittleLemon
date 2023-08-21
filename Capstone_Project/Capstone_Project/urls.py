@@ -17,8 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from LittleLemon.router import router
-import djoser.urls
-import djoser.urls.authtoken
 
 urlpatterns = [
     path('admin/', admin.site.urls),
