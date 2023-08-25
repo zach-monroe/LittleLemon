@@ -7,12 +7,14 @@ from .models import *
 from LittleLemon.serializers import bookingSerializer, menuSerializer, UserSerializer
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
 from django.contrib.auth.models import User
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 
 class BookingViewSet(rest_framework.viewsets.ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = bookingSerializer
+    permission_classes = [IsAuthenticated]
     
 
     def get(self, request):
@@ -29,10 +31,12 @@ class BookingViewSet(rest_framework.viewsets.ModelViewSet):
 class MenuItemView(ListCreateAPIView):
     queryset = Menu.objects.all()
     serializer_class = menuSerializer
+    permission_classes = [IsAuthenticated]
 
 class SingleMenuItemView(RetrieveUpdateAPIView, DestroyAPIView):
     queryset = Menu.objects.all()
     serializer_class = menuSerializer
+    permission_classes = [IsAuthenticated]
 
 class UserViewSet(rest_framework.viewsets.ModelViewSet):
     queryset = User.objects.all()
