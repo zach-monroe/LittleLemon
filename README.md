@@ -1,15 +1,10 @@
 # LittleLemon
 Back-End Developer Capstone Project
 
-BEFORE DOING ANYTHING
-activate virtual environment using pipenv shell 
-(it will not runserver otherwise)
-
 Login for Django Admin:
 User | Testing
 Passwird | test@123!
 
-IF USER LOGIN DOES NOT WORK, use python3 manage.py createsuperuser (after activating pipenv shell) to access.
 
 Paths for testing:
 Generate Token (Using Post Request in Insomnia w/ Valid Login)| http://127.0.0.1:8000/restaurant/api-token-auth/
